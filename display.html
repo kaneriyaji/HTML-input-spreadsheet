@@ -1,0 +1,20 @@
+  
+<script> 
+  // Get the spreadsheet data
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID");
+  var data = sheet.getDataRange().getValues();
+
+  // Create an HTML table
+  var table = document.createElement("table");
+  for (var i = 0; i < data.length; i++) {
+    var row = table.insertRow();
+    for (var j = 0; j < data[i].length; j++) {
+      var cell = row.insertCell();
+      cell.innerHTML = data[i][j];
+    }
+  }
+
+  // Append the table to the document
+  document.body.appendChild(table);
+  
+</script>
